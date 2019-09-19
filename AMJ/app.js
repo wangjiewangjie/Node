@@ -1,9 +1,9 @@
+const cheerio = require('cheerio');
 const superagent = require('superagent');
 const charset = require('superagent-charset');
 charset(superagent);
-const cheerio = require('cheerio');
 
-superagent.get('https://www.meiju.net/search.php?page=1&searchtype=5&tid=2').end(function (error, html) {
+superagent.get('https://www.meiju.net/new/video/search/%E9%BE%99%E6%88%98%E5%A3%AB.html').end((error, html) => {
 
   if (error) {
     console.log(error)
@@ -11,9 +11,17 @@ superagent.get('https://www.meiju.net/search.php?page=1&searchtype=5&tid=2').end
   }
 
   var $ = cheerio.load(html.text);
-  console.log($)
-  $('.visible-xs .num').each(function () {
-    pages = $(this).text().match(/\/(\S*)/)[1] //获取总页数
-  })
 
+  superagent.get('https://www.meiju.net/' + $('.thumbnail').attr('href')).end((error, html) => {
+    if (error) {
+      console.log(error)
+      return;
+    }
+  
+    var $ = cheerio.load(html.text);
+    $('#detail-content ul li a').each((index,element)=>{
+      let $element = $(element);
+      console.log($element.attr('href'))
+    })
+  })
 })
