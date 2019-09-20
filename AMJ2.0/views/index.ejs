@@ -7,27 +7,28 @@
 </head>
 
 <body>
-  <div class="search">
-    <input type="text" placeholder="请输入影片名称" name="search-control" onkeyup="onSearchKeyup(event)">
-    <button onclick="onSearch()">搜索</button>
-  </div>
-  <script>
-    function onSearch() {
-      var target = document.getElementsByName('search-control')[0].value
-      if (target !== '') {
-        window.location.href = 'https://www.meiju.net/new/video/search/' + target + '.html'
-      }
-    } //点击搜索事件
+  <form class="search">
+    <input type="text" placeholder="请输入影片名称" id="keyword" name="keyword" onkeyup="onSearchKeyup(event)">
+    <button type="submit">搜索</button>
+  </form>
 
-    function onSearchKeyup(event) {
-      event = event || window.event;
-      if (event.keyCode == 13) {
-        var target = document.getElementsByName('search-control')[0].value
-        if (target !== '') {
-          window.location.href = 'https://www.meiju.net/new/video/search/' + target + '.html'
-        }
-      }
-    } //回车事件
+  <script>
+    // function onSearch() {
+    //   var target = document.getElementsByName('keyword')[0].value
+    //   if (target !== '') {
+    //     window.location.href = 'https://www.meiju.net/new/video/search/' + target + '.html'
+    //   }
+    // } //点击搜索事件
+
+    // function onSearchKeyup(event) {
+    //   event = event || window.event;
+    //   if (event.keyCode == 13) {
+    //     var target = document.getElementsByName('keyword')[0].value
+    //     if (target !== '') {
+    //       window.location.href = 'https://www.meiju.net/new/video/search/' + target + '.html'
+    //     }
+    //   }
+    // } //回车事件
   </script>
 </body>
 
