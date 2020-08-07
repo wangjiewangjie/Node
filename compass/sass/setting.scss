@@ -1,0 +1,6 @@
+$setting-spacing: 5px;
+$setting-sprite-dimensions: true;
+
+@import "compass/utilities/sprites";
+@import "setting/*.png";
+@include all-setting-sprites;
