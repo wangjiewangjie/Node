@@ -5,7 +5,7 @@
 
 ### <div id="compass">✅ compass 雪碧图拼接</div>
 
-参照(https://github.com/8788/blog/issues/8)
+参照https://github.com/8788/blog/issues/8
 
 ### <div id="TinyPNG">✅ TinyPNG 图片用node批量上传压缩</div>
 
